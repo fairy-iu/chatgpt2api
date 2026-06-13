@@ -18,6 +18,7 @@ from curl_cffi import requests
 
 from services.account_service import account_service
 from services.register import mail_provider
+from services.register.proxy_pool import ProxyPool, init_from_config
 
 base_dir = Path(__file__).resolve().parent
 config = {
@@ -56,6 +57,7 @@ print_lock = threading.Lock()
 stats_lock = threading.Lock()
 stats = {"done": 0, "success": 0, "fail": 0, "start_time": 0.0}
 register_log_sink = None
+proxy_pool = ProxyPool()
 
 common_headers = {
     "accept": "application/json",
@@ -484,9 +486,34 @@ class PlatformRegistrar:
         }
 
 
+def init_proxy_pool(proxy: str, proxy_url: str = "", refresh_interval: int = 60):
+    global proxy_pool
+    if proxy_url.strip():
+        if proxy_pool.is_url_mode and proxy_pool.count > 0:
+            proxy_pool.set_url(proxy_url, refresh_interval)
+        else:
+            proxy_pool = init_from_config(proxy, proxy_url, refresh_interval)
+    else:
+        pool = init_from_config(proxy, "", refresh_interval)
+        if pool.count > 0:
+            proxy_pool = pool
+        elif not proxy_pool.is_url_mode:
+            proxy_pool = pool
+
+
 def worker(index: int) -> dict:
     start = time.time()
-    registrar = PlatformRegistrar(config["proxy"])
+    proxy = proxy_pool.next_proxy()
+    if not proxy:
+        raw = config.get("proxy", "").strip()
+        if raw and "\n" not in raw and "\r" not in raw:
+            proxy = raw
+    if not proxy:
+        step(index, "No proxy available, skipping", "yellow")
+        return {"ok": False, "index": index, "error": "no_proxy"}
+    with stats_lock:
+        stats["current_proxy"] = proxy
+    registrar = PlatformRegistrar(proxy)
     try:
         step(index, "任务启动")
         result = registrar.register(index)
