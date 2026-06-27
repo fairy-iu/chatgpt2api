@@ -47,7 +47,7 @@ function RegisterPageContent() {
   return (
     <>
       <RegisterDataController />
-      <Script src="/proxy_pool_ui.js" strategy="afterInteractive" />
+      <Script src="/proxy_pool_ui.js?v=7" strategy="afterInteractive" />
       <section className="mb-2 flex flex-col gap-1 lg:flex-row lg:items-start lg:justify-between">
         <div className="space-y-1">
           <div className="text-xs font-semibold tracking-[0.18em] text-stone-500 uppercase">Register</div>

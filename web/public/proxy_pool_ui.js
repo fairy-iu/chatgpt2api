@@ -1,5 +1,5 @@
 /**
- * Proxy Pool UI v6 — MutationObserver + dedicated save + SSE real-time proxy display
+ * Proxy Pool UI v7 — MutationObserver + dedicated save + SSE real-time proxy display + Dark Mode
  * Auth key read from IndexedDB (localforage), same as React app.
  */
 (function() {
@@ -7,6 +7,120 @@
 
   const LS_KEY = 'chatgpt2api_proxy_pool';
   let injected = false;
+
+  /* ── Theme detection ── */
+  function isDarkMode() {
+    return document.documentElement.classList.contains('dark');
+  }
+
+  /* ── Inject CSS for theme support ── */
+  function injectStyles() {
+    if (document.getElementById('pp-theme-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'pp-theme-styles';
+    style.textContent = `
+      #pp-wrapper {
+        margin-top: 8px;
+        padding: 12px;
+        background: #fafaf9;
+        border: 1px solid #e7e5e4;
+        border-radius: 12px;
+        transition: background 0.3s, border-color 0.3s;
+      }
+      .dark #pp-wrapper {
+        background: #1c1917;
+        border-color: #44403c;
+      }
+      #pp-wrapper label {
+        display: block;
+        font-size: 13px;
+        color: #57534e;
+        margin-bottom: 6px;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+      .dark #pp-wrapper label {
+        color: #a8a29e;
+      }
+      #pp-url, #pp-interval {
+        width: 100%;
+        height: 40px;
+        border: 1px solid #d6d3d1;
+        border-radius: 12px;
+        padding: 0 14px;
+        font-size: 13px;
+        background: white;
+        color: #1c1917;
+        box-sizing: border-box;
+        outline: none;
+        transition: background 0.3s, border-color 0.3s, color 0.3s;
+      }
+      .dark #pp-url, .dark #pp-interval {
+        background: #292524;
+        border-color: #57534e;
+        color: #e7e5e4;
+      }
+      #pp-save-btn {
+        height: 40px;
+        padding: 0 20px;
+        border-radius: 12px;
+        border: 1px solid #d6d3d1;
+        background: white;
+        cursor: pointer;
+        font-size: 13px;
+        color: #44403c;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.15s;
+      }
+      #pp-save-btn:hover {
+        background: #f5f5f4;
+      }
+      .dark #pp-save-btn {
+        background: #292524;
+        border-color: #57534e;
+        color: #e7e5e4;
+      }
+      .dark #pp-save-btn:hover {
+        background: #44403c;
+      }
+      #pp-status {
+        margin-top: 8px;
+        font-size: 12px;
+        color: #a8a29e;
+        transition: color 0.3s;
+      }
+      .dark #pp-status {
+        color: #78716c;
+      }
+      #pp-current {
+        margin-top: 6px;
+        font-size: 14px;
+        color: #57534e;
+        font-weight: 600;
+        min-height: 22px;
+        transition: color 0.3s;
+      }
+      .dark #pp-current {
+        color: #d6d3d1;
+      }
+      #pp-current code {
+        background: #f5f5f4;
+        padding: 3px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        border: 1px solid #e7e5e4;
+        color: #292524;
+      }
+      .dark #pp-current code {
+        background: #44403c;
+        border-color: #57534e;
+        color: #e7e5e4;
+      }
+    `;
+    document.head.appendChild(style);
+  }
 
   /* ── Auth key from IndexedDB (localforage) ── */
   function getAuthToken() {
@@ -63,36 +177,27 @@
     const grid = label.closest('.grid');
     if (!grid) return;
 
+    // Inject theme-aware CSS
+    injectStyles();
+
     const wrapper = document.createElement('div');
     wrapper.id = 'pp-wrapper';
-    wrapper.style.cssText = 'margin-top:8px;padding:12px;background:#fafaf9;border:1px solid #e7e5e4;border-radius:12px;';
     wrapper.innerHTML = `
       <div style="display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;">
         <div style="flex:2;min-width:200px;">
-          <label style="display:block;font-size:13px;color:#57534e;margin-bottom:6px;font-weight:500;">
-            代理列表URL（每行一个代理，自动拉取轮询）
-          </label>
-          <input type="text" id="pp-url" placeholder="留空则使用上方单个代理"
-            style="width:100%;height:40px;border:1px solid #d6d3d1;border-radius:12px;padding:0 14px;font-size:13px;background:white;box-sizing:border-box;outline:none;" />
+          <label>代理列表URL（每行一个代理，自动拉取轮询）</label>
+          <input type="text" id="pp-url" placeholder="留空则使用上方单个代理" />
         </div>
         <div style="flex:0.6;min-width:100px;">
-          <label style="display:block;font-size:13px;color:#57534e;margin-bottom:6px;font-weight:500;">
-            刷新秒数
-          </label>
-          <input type="number" id="pp-interval" value="60" min="10"
-            style="width:100%;height:40px;border:1px solid #d6d3d1;border-radius:12px;padding:0 14px;font-size:13px;background:white;box-sizing:border-box;outline:none;" />
+          <label>刷新秒数</label>
+          <input type="number" id="pp-interval" value="60" min="10" />
         </div>
         <div style="flex:0;min-width:100px;">
-          <button id="pp-save-btn"
-            style="height:40px;padding:0 20px;border-radius:12px;border:1px solid #d6d3d1;background:white;cursor:pointer;font-size:13px;color:#44403c;display:flex;align-items:center;gap:6px;transition:all 0.15s;"
-            onmouseover="this.style.background='#f5f5f4'"
-            onmouseout="this.style.background='white'">
-            💾 保存代理配置
-          </button>
+          <button id="pp-save-btn">💾 保存代理配置</button>
         </div>
       </div>
-      <div id="pp-status" style="margin-top:8px;font-size:12px;color:#a8a29e;"></div>
-      <div id="pp-current" style="margin-top:6px;font-size:14px;color:#57534e;font-weight:600;min-height:22px;"></div>
+      <div id="pp-status"></div>
+      <div id="pp-current"></div>
     `;
     grid.parentNode.insertBefore(wrapper, grid.nextSibling);
 
@@ -148,10 +253,10 @@
         if (enabled && proxy) {
           if (proxy !== lastProxy) {
             lastProxy = proxy;
-            el.innerHTML = '🎯 当前代理：<code style="background:#f5f5f4;padding:3px 10px;border-radius:6px;font-size:13px;border:1px solid #e7e5e4;color:#292524;">' + proxy + '</code>';
+            el.innerHTML = '🎯 当前代理：<code>' + proxy + '</code>';
           }
         } else if (enabled) {
-          el.innerHTML = '<span style="color:#a8a29e;">⏳ 注册运行中，等待分配代理...</span>';
+          el.innerHTML = '<span style="color:inherit;opacity:0.6;">⏳ 注册运行中，等待分配代理...</span>';
           lastProxy = '';
         } else {
           if (el.textContent) el.textContent = '';
@@ -251,7 +356,7 @@
       el.innerHTML = '<span style="color:#16a34a;font-weight:500;">✓ URL模式</span> — ' +
         url.substring(0, 80) + (url.length > 80 ? '...' : '');
     } else {
-      el.innerHTML = '<span style="color:#78716c;">单代理模式</span>';
+      el.innerHTML = '<span style="opacity:0.6;">单代理模式</span>';
     }
   }
 
