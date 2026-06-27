@@ -166,6 +166,4 @@ curl https://your-domain.com/v1/images/generations \
 - 原版项目：[basketikun/chatgpt2api](https://github.com/basketikun/chatgpt2api)
 - 本项目：[fairy-iu/chatgpt2api](https://github.com/fairy-iu/chatgpt2api)
 
-## Star History
-
 [![Star History Chart](https://api.star-history.com/chart?repos=basketikun/chatgpt2api&type=date&legend=top-left)](https://www.star-history.com/?repos=basketikun%2Fchatgpt2api&type=date&legend=top-left)
