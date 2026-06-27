@@ -163,6 +163,8 @@ curl https://your-domain.com/v1/images/generations \
 
 ## 相关链接
 
+- 代理池 Fork：[strongshuai/chatgpt2api-proxy-pool](https://github.com/strongshuai/chatgpt2api-proxy-pool)
+
 - 原版项目：[basketikun/chatgpt2api](https://github.com/basketikun/chatgpt2api)
 - 本项目：[fairy-iu/chatgpt2api](https://github.com/fairy-iu/chatgpt2api)
 
