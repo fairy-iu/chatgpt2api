@@ -359,3 +359,67 @@ curl http://localhost:8000/v1/responses \
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/chart?repos=basketikun/chatgpt2api&type=date&legend=top-left)](https://www.star-history.com/?repos=basketikun%2Fchatgpt2api&type=date&legend=top-left)
+
+## 注册代理轮询（Proxy Pool）
+
+基于原版新增的注册代理池功能，支持从代理列表 URL 自动拉取代理并在注册时轮询使用。
+
+### 功能特性
+
+- 支持三种代理来源：单代理、代理列表 URL、粘贴代理列表
+- 代理列表 URL 支持一行一个代理，自动定时拉取刷新
+- 每个注册 worker 启动时从代理池轮询一个代理，注册流程内固定使用
+- 代理池支持 120 秒租约机制，避免并发重复踩同一个代理
+- 代理成功/失败/Cloudflare 拦截/网络超时等结果会写入 `data/register_proxy_state.json`
+- 支持智能黑名单代理机制，大幅稳定提升成功率
+- 支持评分排序和新代理探索比例限制
+- 注册页在代理列表模式下提供"重置代理黑名单"按钮
+
+### 支持的代理格式
+
+```
+http://1.2.3.4:8080
+https://1.2.3.4:8443
+socks5://1.2.3.4:1080
+socks5h://1.2.3.4:1080
+1.2.3.4:8080
+```
+
+裸 `ip:port` 会按 HTTP 代理处理。`socks5://` 会规范化为 `socks5h://`，让 DNS 解析也走代理。
+
+### 使用方法
+
+1. 启动服务后访问注册页面
+2. 在「注册代理」部分选择代理来源：
+   - **单代理**：填写一个代理地址
+   - **代理列表 URL**：填写一行一个代理的文本链接（如代理检测工具生成的仓库链接）
+   - **粘贴代理列表**：在 textarea 中直接粘贴代理列表
+3. 设置刷新秒数（URL 模式下自动拉取间隔）
+4. 点击「保存代理配置」
+5. 启动注册任务即可
+
+### 夜间模式
+
+代理池 UI 支持跟随系统/手动切换的暗色模式，所有元素（背景、边框、输入框、按钮）都会自动适配。
+
+### 自动同步上游更新
+
+本项目使用 GitHub Actions 自动同步上游 [basketikun/chatgpt2api](https://github.com/basketikun/chatgpt2api) 的更新。
+
+工作流文件位于 `.github/workflows/sync-upstream.yml`，每天自动检查上游更新并合并。
+
+也可以手动触发同步：在 GitHub 仓库页面 → Actions → Sync Upstream → Run workflow。
+
+### 手动更新
+
+```bash
+./update-from-upstream.sh
+```
+
+该脚本会自动：
+1. 备份当前配置和数据
+2. 从原版仓库拉取最新代码
+3. 合并更新并解决冲突
+4. 应用代理池 patch
+5. 安装依赖并构建前端
+6. 重启服务

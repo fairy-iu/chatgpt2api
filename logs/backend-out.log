@@ -1,0 +1,258 @@
+2026-06-27 09:39:27: [storage] Initializing storage backend: json
+2026-06-27 09:39:27: [storage] Using JSON storage: /root/chatgpt2api-proxy-pool/data/accounts.json
+2026-06-27 09:39:27: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:39:27: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:48:49: [storage] Initializing storage backend: json
+2026-06-27 09:48:49: [storage] Using JSON storage: /root/chatgpt2api-proxy-pool/data/accounts.json
+2026-06-27 09:48:49: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:48:49: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:48:49: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:48:49: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:48:49: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:48:49: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:48:49: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:48:49: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:50:02: [storage] Initializing storage backend: json
+2026-06-27 09:50:02: [storage] Using JSON storage: /root/chatgpt2api-proxy-pool/data/accounts.json
+2026-06-27 09:50:02: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:50:02: [account-watcher] checking 0 limited accounts, 15 normal accounts, 0 expiring access tokens
+2026-06-27 09:51:27: [storage] Initializing storage backend: json
+2026-06-27 09:51:27: [storage] Using JSON storage: /root/chatgpt2api-proxy-pool/data/accounts.json
+2026-06-27 09:51:27: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:51:27: [account-watcher] checking 0 limited accounts, 15 normal accounts, 0 expiring access tokens
+2026-06-27 09:54:17: [storage] Initializing storage backend: json
+2026-06-27 09:54:17: [storage] Using JSON storage: /root/chatgpt2api-proxy-pool/data/accounts.json
+2026-06-27 09:54:17: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:54:17: [account-watcher] checking 0 limited accounts, 15 normal accounts, 0 expiring access tokens
+2026-06-27 09:54:17: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:54:17: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:54:17: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:54:17: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:54:17: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:54:17: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:54:17: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:54:17: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 09:54:17: 09:53:53 [任务1] 任务启动
+2026-06-27 09:54:17: 09:53:53 [任务1] 开始创建邮箱
+2026-06-27 09:54:17: 09:53:53 [任务2] 任务启动
+2026-06-27 09:54:17: 09:53:53 [任务2] 开始创建邮箱
+2026-06-27 09:54:17: 09:53:53 [任务3] 任务启动
+2026-06-27 09:54:17: 09:53:53 [任务3] 开始创建邮箱
+2026-06-27 09:54:17: 09:53:54 [任务1] 邮箱创建完成[]: tuhsm34jr@sylvan.eu.org
+2026-06-27 09:54:17: 09:53:54 [任务1] 开始 platform authorize
+2026-06-27 09:54:17: 09:53:54 [任务2] 邮箱创建完成[]: fttjs49tqr@sylvan.eu.org
+2026-06-27 09:54:17: 09:53:54 [任务2] 开始 platform authorize
+2026-06-27 09:54:17: 09:53:54 [任务3] 邮箱创建完成[]: xhwpm577jno@sylvan.eu.org
+2026-06-27 09:54:17: 09:53:54 [任务3] 开始 platform authorize
+2026-06-27 09:54:17: 09:53:56 [任务2] platform authorize 完成[signup] url=https://auth.openai.com/create-account/password
+2026-06-27 09:54:17: 09:53:56 [任务2] 开始提交注册密码
+2026-06-27 09:54:17: 09:53:56 [任务3] platform authorize 完成[signup] url=https://auth.openai.com/create-account/password
+2026-06-27 09:54:17: 09:53:56 [任务3] 开始提交注册密码
+2026-06-27 09:54:17: 09:53:56 [任务1] platform authorize 完成[signup] url=https://auth.openai.com/create-account/password
+2026-06-27 09:54:17: 09:53:56 [任务1] 开始提交注册密码
+2026-06-27 09:54:17: 09:53:58 [任务3] 提交注册密码完成
+2026-06-27 09:54:17: 09:53:58 [任务3] 开始发送验证码
+2026-06-27 09:54:17: 09:53:58 [任务2] 提交注册密码完成
+2026-06-27 09:54:17: 09:53:58 [任务2] 开始发送验证码
+2026-06-27 09:54:17: 09:53:59 [任务3] 发送验证码完成
+2026-06-27 09:54:17: 09:53:59 [任务3] 开始等待注册验证码
+2026-06-27 09:54:17: 09:53:59 [任务1] 提交注册密码完成
+2026-06-27 09:54:17: 09:53:59 [任务1] 开始发送验证码
+2026-06-27 09:54:17: 09:53:59 [任务2] 发送验证码完成
+2026-06-27 09:54:17: 09:53:59 [任务2] 开始等待注册验证码
+2026-06-27 09:54:17: 09:54:00 [任务2] 收到注册验证码: 466280
+2026-06-27 09:54:17: 09:54:00 [任务2] 开始校验验证码 466280
+2026-06-27 09:54:17: 09:54:00 [任务2] 验证码校验完成
+2026-06-27 09:54:17: 09:54:00 [任务2] 开始创建账号资料
+2026-06-27 09:54:17: 09:54:00 [任务1] 发送验证码完成
+2026-06-27 09:54:17: 09:54:00 [任务1] 开始等待注册验证码
+2026-06-27 09:54:17: 09:54:00 [任务1] 收到注册验证码: 621864
+2026-06-27 09:54:17: 09:54:00 [任务1] 开始校验验证码 621864
+2026-06-27 09:54:17: 09:54:01 [任务1] 验证码校验完成
+2026-06-27 09:54:17: 09:54:01 [任务1] 开始创建账号资料
+2026-06-27 09:54:17: 09:54:02 [任务3] 收到注册验证码: 728274
+2026-06-27 09:54:17: 09:54:02 [任务3] 开始校验验证码 728274
+2026-06-27 09:54:17: [31m09:54:02 任务2 注册失败，本次耗时9.2s，原因: create_account_http_400, detail={"error": {"message": "Sorry, we cannot create your account with the given information.", "type": "invalid_request_error", "param": null, "code": "registration_disallowed"}}[0m
+2026-06-27 09:54:17: 09:54:02 [任务4] 任务启动
+2026-06-27 09:54:17: 09:54:02 [任务4] 开始创建邮箱
+2026-06-27 09:54:17: 09:54:02 [任务3] 验证码校验完成
+2026-06-27 09:54:17: 09:54:02 [任务3] 开始创建账号资料
+2026-06-27 09:54:17: 09:54:02 [任务4] 邮箱创建完成[]: ozmji5jvr@sylvan.eu.org
+2026-06-27 09:54:17: 09:54:02 [任务4] 开始 platform authorize
+2026-06-27 09:54:17: [31m09:54:03 任务1 注册失败，本次耗时10.1s，原因: create_account_http_400, detail={"error": {"message": "Sorry, we cannot create your account with the given information.", "type": "invalid_request_error", "param": null, "code": "registration_disallowed"}}[0m
+2026-06-27 09:54:17: 09:54:03 [任务5] 任务启动
+2026-06-27 09:54:17: 09:54:03 [任务5] 开始创建邮箱
+2026-06-27 09:54:17: 09:54:03 [任务5] 邮箱创建完成[]: vmvqr400eqh@sylvan.eu.org
+2026-06-27 09:54:17: 09:54:03 [任务5] 开始 platform authorize
+2026-06-27 09:54:17: [31m09:54:03 任务3 注册失败，本次耗时10.5s，原因: create_account_http_400, detail={"error": {"message": "Sorry, we cannot create your account with the given information.", "type": "invalid_request_error", "param": null, "code": "registration_disallowed"}}[0m
+2026-06-27 09:54:17: 09:54:03 [任务6] 任务启动
+2026-06-27 09:54:17: 09:54:03 [任务6] 开始创建邮箱
+2026-06-27 09:54:17: 09:54:04 [任务6] 邮箱创建完成[]: btqyz28tl@sylvan.eu.org
+2026-06-27 09:54:17: 09:54:04 [任务6] 开始 platform authorize
+2026-06-27 09:54:17: 09:54:04 [任务4] platform authorize 完成[signup] url=https://auth.openai.com/create-account/password
+2026-06-27 09:54:17: 09:54:04 [任务4] 开始提交注册密码
+2026-06-27 09:54:17: 09:54:05 [任务5] platform authorize 完成[signup] url=https://auth.openai.com/create-account/password
+2026-06-27 09:54:17: 09:54:05 [任务5] 开始提交注册密码
+2026-06-27 09:54:17: 09:54:06 [任务6] platform authorize 完成[signup] url=https://auth.openai.com/create-account/password
+2026-06-27 09:54:17: 09:54:06 [任务6] 开始提交注册密码
+2026-06-27 09:54:17: 09:54:06 [任务4] 提交注册密码完成
+2026-06-27 09:54:17: 09:54:06 [任务4] 开始发送验证码
+2026-06-27 09:54:17: 09:54:07 [任务5] 提交注册密码完成
+2026-06-27 09:54:17: 09:54:07 [任务5] 开始发送验证码
+2026-06-27 09:54:17: 09:54:07 [任务4] 发送验证码完成
+2026-06-27 09:54:17: 09:54:07 [任务4] 开始等待注册验证码
+2026-06-27 09:54:17: 09:54:08 [任务4] 收到注册验证码: 777098
+2026-06-27 09:54:17: 09:54:08 [任务4] 开始校验验证码 777098
+2026-06-27 09:54:17: 09:54:08 [任务6] 提交注册密码完成
+2026-06-27 09:54:17: 09:54:08 [任务6] 开始发送验证码
+2026-06-27 09:54:17: 09:54:08 [任务5] 发送验证码完成
+2026-06-27 09:54:17: 09:54:08 [任务5] 开始等待注册验证码
+2026-06-27 09:54:17: 09:54:08 [任务4] 验证码校验完成
+2026-06-27 09:54:17: 09:54:08 [任务4] 开始创建账号资料
+2026-06-27 09:54:17: 09:54:09 [任务6] 发送验证码完成
+2026-06-27 09:54:17: 09:54:09 [任务6] 开始等待注册验证码
+2026-06-27 09:54:17: [31m09:54:10 任务4 注册失败，本次耗时7.7s，原因: create_account_http_400, detail={"error": {"message": "Sorry, we cannot create your account with the given information.", "type": "invalid_request_error", "param": null, "code": "registration_disallowed"}}[0m
+2026-06-27 09:54:17: 09:54:10 [任务7] 任务启动
+2026-06-27 09:54:17: 09:54:10 [任务7] 开始创建邮箱
+2026-06-27 09:54:17: 09:54:10 [任务7] 邮箱创建完成[]: ggdmq896yql@sylvan.eu.org
+2026-06-27 09:54:17: 09:54:10 [任务7] 开始 platform authorize
+2026-06-27 09:54:17: 09:54:11 [任务5] 收到注册验证码: 759419
+2026-06-27 09:54:17: 09:54:11 [任务5] 开始校验验证码 759419
+2026-06-27 09:54:17: 09:54:11 [任务5] 验证码校验完成
+2026-06-27 09:54:17: 09:54:11 [任务5] 开始创建账号资料
+2026-06-27 09:54:17: 09:54:11 [任务6] 收到注册验证码: 960924
+2026-06-27 09:54:17: 09:54:11 [任务6] 开始校验验证码 960924
+2026-06-27 09:54:17: 09:54:12 [任务7] platform authorize 完成[signup] url=https://auth.openai.com/create-account/password
+2026-06-27 09:54:17: 09:54:12 [任务7] 开始提交注册密码
+2026-06-27 09:54:17: 09:54:12 [任务6] 验证码校验完成
+2026-06-27 09:54:17: 09:54:12 [任务6] 开始创建账号资料
+2026-06-27 09:54:17: [31m09:54:12 任务5 注册失败，本次耗时9.3s，原因: create_account_http_400, detail={"error": {"message": "Sorry, we cannot create your account with the given information.", "type": "invalid_request_error", "param": null, "code": "registration_disallowed"}}[0m
+2026-06-27 09:54:17: 09:54:12 [任务8] 任务启动
+2026-06-27 09:54:17: 09:54:12 [任务8] 开始创建邮箱
+2026-06-27 09:54:17: 09:54:13 [任务8] 邮箱创建完成[]: xesmr17itm@sylvan.eu.org
+2026-06-27 09:54:17: 09:54:13 [任务8] 开始 platform authorize
+2026-06-27 09:54:17: [31m09:54:13 任务6 注册失败，本次耗时10.1s，原因: create_account_http_400, detail={"error": {"message": "Sorry, we cannot create your account with the given information.", "type": "invalid_request_error", "param": null, "code": "registration_disallowed"}}[0m
+2026-06-27 09:54:17: 09:54:13 [任务9] 任务启动
+2026-06-27 09:54:17: 09:54:13 [任务9] 开始创建邮箱
+2026-06-27 09:54:17: 09:54:14 [任务9] 邮箱创建完成[]: sjvaq063i@sylvan.eu.org
+2026-06-27 09:54:17: 09:54:14 [任务9] 开始 platform authorize
+2026-06-27 09:54:17: 09:54:14 [任务7] 提交注册密码完成
+2026-06-27 09:54:17: 09:54:14 [任务7] 开始发送验证码
+2026-06-27 09:54:17: 09:54:14 [任务8] platform authorize 完成[signup] url=https://auth.openai.com/create-account/password
+2026-06-27 09:54:17: 09:54:14 [任务8] 开始提交注册密码
+2026-06-27 09:54:17: 09:54:15 [任务7] 发送验证码完成
+2026-06-27 09:54:17: 09:54:15 [任务7] 开始等待注册验证码
+2026-06-27 09:54:17: 09:54:15 [任务7] 收到注册验证码: 373210
+2026-06-27 09:54:17: 09:54:15 [任务7] 开始校验验证码 373210
+2026-06-27 09:54:17: 09:54:16 [任务9] platform authorize 完成[signup] url=https://auth.openai.com/create-account/password
+2026-06-27 09:54:17: 09:54:16 [任务9] 开始提交注册密码
+2026-06-27 09:54:17: 09:54:16 [任务7] 验证码校验完成
+2026-06-27 09:54:17: 09:54:16 [任务7] 开始创建账号资料
+2026-06-27 09:54:17: 09:54:17 [任务8] 提交注册密码完成
+2026-06-27 09:57:01: 
+2026-06-27 09:57:01: [31m09:54:17 任务7 注册失败，本次耗时7.3s，原因: create_account_http_400, detail={"error": {"message": "Sorry, we cannot create your account with the given information.", "type": "invalid_request_error", "param": null, "code": "registration_disallowed"}}[0m
+2026-06-27 09:57:01: 09:54:17 [任务10] 任务启动
+2026-06-27 09:57:01: 09:54:17 [任务10] 开始创建邮箱
+2026-06-27 09:57:01: 09:54:17 [任务10] 邮箱创建完成[]: ophqh53vc@sylvan.eu.org
+2026-06-27 09:57:01: 09:54:17 [任务10] 开始 platform authorize
+2026-06-27 09:57:01: 09:54:18 [任务8] 发送验证码完成
+2026-06-27 09:57:01: 09:54:18 [任务8] 开始等待注册验证码
+2026-06-27 09:57:01: 09:54:18 [任务9] 提交注册密码完成
+2026-06-27 09:57:01: 09:54:18 [任务9] 开始发送验证码
+2026-06-27 09:57:01: 09:54:19 [任务9] 发送验证码完成
+2026-06-27 09:57:01: 09:54:19 [任务9] 开始等待注册验证码
+2026-06-27 09:57:01: 09:54:19 [任务10] platform authorize 完成[signup] url=https://auth.openai.com/create-account/password
+2026-06-27 09:57:01: 09:54:19 [任务10] 开始提交注册密码
+2026-06-27 09:57:01: 09:54:19 [任务9] 收到注册验证码: 884044
+2026-06-27 09:57:01: 09:54:19 [任务9] 开始校验验证码 884044
+2026-06-27 09:57:01: 09:54:20 [任务9] 验证码校验完成
+2026-06-27 09:57:01: 09:54:20 [任务9] 开始创建账号资料
+2026-06-27 09:57:01: 09:54:20 [任务8] 收到注册验证码: 884230
+2026-06-27 09:57:01: 09:54:20 [任务8] 开始校验验证码 884230
+2026-06-27 09:57:01: 09:54:21 [任务8] 验证码校验完成
+2026-06-27 09:57:01: 09:54:21 [任务8] 开始创建账号资料
+2026-06-27 09:57:01: [31m09:54:21 任务9 注册失败，本次耗时7.6s，原因: create_account_http_400, detail={"error": {"message": "Sorry, we cannot create your account with the given information.", "type": "invalid_request_error", "param": null, "code": "registration_disallowed"}}[0m
+2026-06-27 09:57:01: 09:54:21 [任务11] 任务启动
+2026-06-27 09:57:01: 09:54:21 [任务11] 开始创建邮箱
+2026-06-27 09:57:01: 09:54:21 [任务11] 邮箱创建完成[]: skkai77u@sylvan.eu.org
+2026-06-27 09:57:01: 09:54:21 [任务11] 开始 platform authorize
+2026-06-27 09:57:01: 09:54:21 [任务10] 提交注册密码完成
+2026-06-27 09:57:01: 09:54:21 [任务10] 开始发送验证码
+2026-06-27 09:57:01: [31m09:54:22 任务8 注册失败，本次耗时9.5s，原因: create_account_http_400, detail={"error": {"message": "Sorry, we cannot create your account with the given information.", "type": "invalid_request_error", "param": null, "code": "registration_disallowed"}}[0m
+2026-06-27 09:57:01: 09:54:22 [任务12] 任务启动
+2026-06-27 09:57:01: 09:54:22 [任务12] 开始创建邮箱
+2026-06-27 09:57:01: 09:54:22 [任务12] 邮箱创建完成[]: aqtrt48ysf@sylvan.eu.org
+2026-06-27 09:57:01: 09:54:22 [任务12] 开始 platform authorize
+2026-06-27 09:57:01: [33m09:54:22 [任务11] 检测到 Cloudflare 拦截，可尝试使用 FlareSolverr 清障方式，注意需要 Docker 部署 flaresolverr、privoxy、warp-proxy 等相关容器[0m
+2026-06-27 09:57:01: [31m09:54:22 任务11 注册失败，本次耗时1.3s，原因: 被 Cloudflare 拦截，可尝试使用 FlareSolverr 清障方式，注意需要 Docker 部署 flaresolverr、privoxy、warp-proxy 等相关容器: status=403, url=https://auth.openai.com/api/accounts/authorize?issuer=https%3A%2F%2Fauth.openai.com&client_id=app_2SKx67EdpoN0G6j64rFvigXD&audience=https%3A%2F%2Fapi.openai.com%2Fv1&redirect_uri=https%3A%2F%2Fplatform.openai.com%2Fauth%2Fcallback&device_id=bf8ea7be-8381-452a-891b-8d239a1f497c&screen_hint=signup&max, content_type=text/html; charset=UTF-8, cf-ray=a120d2cbbdc7ae62-AMS, body=<!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="content-security-policy" content="default-src &#39;none&#39;; script-src &#39;nonce-QbM7Pa1yJSsI5WZKv46gUc&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.[0m
+2026-06-27 09:57:01: 09:54:22 [任务13] 任务启动
+2026-06-27 09:57:01: 09:54:22 [任务13] 开始创建邮箱
+2026-06-27 09:57:01: 09:54:22 [任务10] 发送验证码完成
+2026-06-27 09:57:01: 09:54:22 [任务10] 开始等待注册验证码
+2026-06-27 09:57:01: 09:54:23 [任务13] 邮箱创建完成[]: pujeo56fl@sylvan.eu.org
+2026-06-27 09:57:01: 09:54:23 [任务13] 开始 platform authorize
+2026-06-27 09:57:01: 09:54:25 [任务10] 收到注册验证码: 214994
+2026-06-27 09:57:01: 09:54:25 [任务10] 开始校验验证码 214994
+2026-06-27 09:57:01: 09:54:25 [任务10] 验证码校验完成
+2026-06-27 09:57:01: 09:54:25 [任务10] 开始创建账号资料
+2026-06-27 09:57:01: [33m09:54:27 [任务12] 检测到 Cloudflare 拦截，可尝试使用 FlareSolverr 清障方式，注意需要 Docker 部署 flaresolverr、privoxy、warp-proxy 等相关容器[0m
+2026-06-27 09:57:01: [31m09:54:27 任务12 注册失败，本次耗时5.4s，原因: 被 Cloudflare 拦截，可尝试使用 FlareSolverr 清障方式，注意需要 Docker 部署 flaresolverr、privoxy、warp-proxy 等相关容器: status=403, url=https://auth.openai.com/api/accounts/authorize?issuer=https%3A%2F%2Fauth.openai.com&client_id=app_2SKx67EdpoN0G6j64rFvigXD&audience=https%3A%2F%2Fapi.openai.com%2Fv1&redirect_uri=https%3A%2F%2Fplatform.openai.com%2Fauth%2Fcallback&device_id=5f4dc468-3433-4354-a9be-18a56daf9dc7&screen_hint=signup&max, content_type=text/html; charset=UTF-8, cf-ray=a120d2e7ffddd743-NRT, body=<!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="content-security-policy" content="default-src &#39;none&#39;; script-src &#39;nonce-VHOeGqV09dUbR0zUJbaIAo&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.[0m
+2026-06-27 09:57:01: 09:54:27 [任务14] 任务启动
+2026-06-27 09:57:01: 09:54:27 [任务14] 开始创建邮箱
+2026-06-27 09:57:01: 09:54:27 [任务14] 邮箱创建完成[]: weizy80chj@sylvan.eu.org
+2026-06-27 09:57:01: 09:54:27 [任务14] 开始 platform authorize
+2026-06-27 09:57:01: 09:54:28 [任务10] 创建账号资料完成
+2026-06-27 09:57:01: 09:54:28 [任务10] 开始换 token
+2026-06-27 09:57:01: 09:54:28 [任务13] platform authorize 完成[signup] url=https://auth.openai.com/create-account/password
+2026-06-27 09:57:01: 09:54:28 [任务13] 开始提交注册密码
+2026-06-27 09:57:01: 09:54:28 [任务10] token 换取完成
+2026-06-27 09:57:01: [32m09:54:32 ophqh53vc@sylvan.eu.org 注册成功，本次耗时11.3s，全局平均每个号注册耗时39.2s[0m
+2026-06-27 09:57:01: 09:54:34 [任务14] platform authorize 完成[signup] url=https://auth.openai.com/create-account/password
+2026-06-27 09:57:01: 09:54:34 [任务14] 开始提交注册密码
+2026-06-27 09:57:01: 09:54:35 [任务13] 提交注册密码完成
+2026-06-27 09:57:01: 09:54:35 [任务13] 开始发送验证码
+2026-06-27 09:57:01: 09:54:38 [任务13] 发送验证码完成
+2026-06-27 09:57:01: 09:54:38 [任务13] 开始等待注册验证码
+2026-06-27 09:57:01: 09:54:38 [任务13] 收到注册验证码: 786138
+2026-06-27 09:57:01: 09:54:38 [任务13] 开始校验验证码 786138
+2026-06-27 09:57:01: 09:54:39 [任务13] 验证码校验完成
+2026-06-27 09:57:01: 09:54:39 [任务13] 开始创建账号资料
+2026-06-27 09:57:01: 09:54:42 [任务14] 提交注册密码完成
+2026-06-27 09:57:01: 09:54:42 [任务14] 开始发送验证码
+2026-06-27 09:57:01: [31m09:54:43 任务13 注册失败，本次耗时20.9s，原因: create_account_http_400, detail={"error": {"message": "Sorry, we cannot create your account with the given information.", "type": "invalid_request_error", "param": null, "code": "registration_disallowed"}}[0m
+2026-06-27 09:57:01: 09:54:45 [任务14] 发送验证码完成
+2026-06-27 09:57:01: 09:54:45 [任务14] 开始等待注册验证码
+2026-06-27 09:57:01: 09:54:45 [任务14] 收到注册验证码: 784347
+2026-06-27 09:57:01: 09:54:45 [任务14] 开始校验验证码 784347
+2026-06-27 09:57:01: 09:54:47 [任务14] 验证码校验完成
+2026-06-27 09:57:01: 09:54:47 [任务14] 开始创建账号资料
+2026-06-27 09:57:01: [31m09:54:51 任务14 注册失败，本次耗时24.1s，原因: create_account_http_400, detail={"error": {"message": "Sorry, we cannot create your account with the given information.", "type": "invalid_request_error", "param": null, "code": "registration_disallowed"}}[0m
+2026-06-27 09:57:01: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:03:17: [storage] Initializing storage backend: json
+2026-06-27 10:03:17: [storage] Using JSON storage: /root/chatgpt2api-proxy-pool/data/accounts.json
+2026-06-27 10:03:17: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:03:17: [account-watcher] checking 0 limited accounts, 16 normal accounts, 0 expiring access tokens
+2026-06-27 10:03:17: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:03:17: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:03:17: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [storage] Initializing storage backend: json
+2026-06-27 10:38:41: [storage] Using JSON storage: /root/chatgpt2api-proxy-pool/data/accounts.json
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [account-watcher] checking 0 limited accounts, 16 normal accounts, 0 expiring access tokens
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht
+2026-06-27 10:38:41: [ProxyPool] Fetched 2835 proxies from https://checker.sylvan.eu.org/api/repo/user_fm0yht

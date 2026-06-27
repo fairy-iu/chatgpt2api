@@ -1,0 +1,125 @@
+name: Sync Upstream
+
+on:
+  schedule:
+    # 每天北京时间早上 8 点自动运行
+    - cron: '0 0 * * *'
+  workflow_dispatch: # 支持手动触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Add upstream remote
+        run: |
+          git remote add upstream https://github.com/basketikun/chatgpt2api.git || true
+          git fetch upstream main
+
+      - name: Check for updates
+        id: check
+        run: |
+          LOCAL=$(git rev-parse HEAD)
+          UPSTREAM=$(git rev-parse upstream/main)
+          if [ "$LOCAL" = "$UPSTREAM" ]; then
+            echo "up_to_date=true" >> $GITHUB_OUTPUT
+            echo "✅ Already up to date"
+          else
+            echo "up_to_date=false" >> $GITHUB_OUTPUT
+            echo "📥 Upstream has new commits"
+            echo "LOCAL=$LOCAL" >> $GITHUB_OUTPUT
+            echo "UPSTREAM=$UPSTREAM" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Merge upstream
+        if: steps.check.outputs.up_to_date == 'false'
+        run: |
+          # 保存本地配置
+          cp config.json config.json.bak || true
+
+          # 尝试合并
+          if git merge upstream/main --no-edit; then
+            echo "✅ Merge successful (no conflicts)"
+          else
+            echo "⚠️ Merge has conflicts, resolving..."
+
+            # 解决 config.json 冲突 - 保留本地配置
+            if [ -f config.json ]; then
+              git checkout --ours config.json
+              git add config.json
+              echo "  ✅ config.json kept local"
+            fi
+
+            # 解决 README.md 冲突 - 使用上游版本
+            if [ -f README.md ]; then
+              git checkout --theirs README.md
+              git add README.md
+              echo "  ✅ README.md used upstream"
+            fi
+
+            # 解决其他冲突 - 使用上游版本
+            git diff --name-only --diff-filter=U | while read file; do
+              if [ "$file" != "config.json" ] && [ "$file" != "README.md" ]; then
+                git checkout --theirs "$file" 2>/dev/null || true
+                git add "$file" 2>/dev/null || true
+              fi
+            done
+
+            git commit --no-edit -m "Merge upstream with conflict resolution"
+            echo "✅ Merge completed with conflict resolution"
+          fi
+
+          # 恢复本地配置
+          cp config.json.bak config.json || true
+          rm -f config.json.bak
+
+      - name: Apply proxy pool patch
+        if: steps.check.outputs.up_to_date == 'false'
+        run: |
+          if [ -f proxy-pool.patch ]; then
+            if git apply --check proxy-pool.patch 2>/dev/null; then
+              git apply proxy-pool.patch
+              git add -A
+              git commit -m "Re-apply proxy pool patch" || echo "No changes to commit"
+              echo "✅ Patch applied successfully"
+            else
+              echo "⚠️ Patch has conflicts, trying 3-way merge..."
+              if git apply --3way proxy-pool.patch 2>/dev/null; then
+                git add -A
+                git commit -m "Re-apply proxy pool patch (3-way merge)" || echo "No changes to commit"
+                echo "✅ Patch applied with 3-way merge"
+              else
+                echo "❌ Patch application failed, manual intervention needed"
+              fi
+            fi
+          else
+            echo "⚠️ proxy-pool.patch not found, skipping"
+          fi
+
+      - name: Push changes
+        if: steps.check.outputs.up_to_date == 'false'
+        run: |
+          git push origin main
+          echo "✅ Changes pushed successfully"
+
+      - name: Create summary
+        if: steps.check.outputs.up_to_date == 'false'
+        run: |
+          echo "## 🔄 Upstream Sync Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Upstream**: basketikun/chatgpt2api" >> $GITHUB_STEP_SUMMARY
+          echo "- **Status**: ✅ Synced successfully" >> $GITHUB_STEP_SUMMARY
+          echo "- **Time**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
