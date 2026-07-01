@@ -37,7 +37,20 @@ def _now() -> str:
 
 
 def _default_config() -> dict:
-    return {**openai_register.config, "mode": "total", "target_quota": 100, "target_available": 10, "check_interval": 5, "enabled": False, "proxy_url": "", "proxy_refresh_interval": 60, "stats": {"success": 0, "fail": 0, "done": 0, "running": 0, "threads": openai_register.config["threads"], "elapsed_seconds": 0, "avg_seconds": 0, "success_rate": 0, "current_quota": 0, "current_available": 0}}
+    return {**openai_register.config, "mode": "total", "target_quota": 100, "target_available": 10, "check_interval": 5, "enabled": False, "stats": {"success": 0, "fail": 0, "done": 0, "running": 0, "threads": openai_register.config["threads"], "elapsed_seconds": 0, "avg_seconds": 0, "success_rate": 0, "current_quota": 0, "current_available": 0}}
+
+
+def _safe_bool(value: object, fallback: bool) -> bool:
+    if isinstance(value, bool):
+        return value
+    if value is None:
+        return fallback
+    text = str(value).strip().lower()
+    if text in {"1", "true", "yes", "on"}:
+        return True
+    if text in {"0", "false", "no", "off"}:
+        return False
+    return fallback
 
 
 def _normalize(raw: dict) -> dict:
@@ -50,10 +63,11 @@ def _normalize(raw: dict) -> dict:
     cfg["target_available"] = max(1, int(cfg.get("target_available") or 1))
     cfg["check_interval"] = max(1, int(cfg.get("check_interval") or 5))
     cfg["proxy"] = str(cfg.get("proxy") or "").strip()
-    cfg["proxy_url"] = str(cfg.get("proxy_url") or "").strip()
-    cfg["proxy_refresh_interval"] = max(10, int(cfg.get("proxy_refresh_interval") or 60))
-    if isinstance(cfg.get("mail"), dict):
-        cfg["mail"].pop("proxy", None)
+    default_mail = _default_config()["mail"] if isinstance(_default_config().get("mail"), dict) else {}
+    mail = cfg.get("mail") if isinstance(cfg.get("mail"), dict) else {}
+    cfg["mail"] = {**default_mail, **mail}
+    cfg["mail"]["api_use_register_proxy"] = _safe_bool(cfg["mail"].get("api_use_register_proxy"), True)
+    cfg["mail"].pop("proxy", None)
     cfg["enabled"] = bool(cfg.get("enabled"))
     stats = {**_default_config()["stats"], **(raw.get("stats") if isinstance(raw.get("stats"), dict) else {}),
              "threads": cfg["threads"]}
@@ -69,7 +83,6 @@ class RegisterService:
         self._logs: list[dict] = []
         openai_register.register_log_sink = self._append_log
         self._config = self._load()
-        self._init_proxy_pool()
         if self._config["enabled"]:
             self.start()
 
@@ -86,19 +99,8 @@ class RegisterService:
     def get(self) -> dict:
         with self._lock:
             snapshot = json.loads(json.dumps({**self._config, "logs": self._logs[-300:]}, ensure_ascii=False))
-            try:
-                running_stats = openai_register.stats
-                if running_stats.get("current_proxy"):
-                    snapshot["stats"]["current_proxy"] = running_stats["current_proxy"]
-            except Exception:
-                pass
         self._redact_outlook_pools(snapshot)
         return snapshot
-    def _init_proxy_pool(self) -> None:
-        proxy = str(self._config.get("proxy") or "").strip()
-        proxy_url = str(self._config.get("proxy_url") or "").strip()
-        refresh = int(self._config.get("proxy_refresh_interval") or 60)
-        openai_register.init_proxy_pool(proxy, proxy_url, refresh)
 
     @staticmethod
     def _mask_email(email: str) -> str:
@@ -178,7 +180,6 @@ class RegisterService:
             self._merge_outlook_pools(updates)
             self._config = _normalize({**self._config, **updates})
             self._drop_mail_proxy()
-            self._init_proxy_pool()
             openai_register.config.update({k: self._config[k] for k in ("mail", "proxy", "total", "threads")})
             self._save()
             return self.get()
@@ -191,7 +192,6 @@ class RegisterService:
                 return self.get()
             self._config["enabled"] = True
             self._drop_mail_proxy()
-            self._init_proxy_pool()
             self._logs = []
             metrics = self._pool_metrics()
             self._config["stats"] = {"job_id": uuid.uuid4().hex, "success": 0, "fail": 0, "done": 0, "running": 0, "threads": self._config["threads"], **metrics, "started_at": _now(), "updated_at": _now()}
